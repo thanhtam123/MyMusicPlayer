@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/statusbar"
+    android:layout_width="fill_parent"
+    android:layout_height="70dp"
+    android:weightSum="1"
+    android:padding="5dp"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/imageViewAlbumArt"
+        android:layout_width="0dp"
+        android:layout_weight="0.1"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/ic_notification" />
+
+    <TextView
+        android:id="@+id/text_song_name"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.5"
+        android:gravity="center_vertical"
+        android:text="siJD"
+        style="@style/TextAppearance.Compat.Notification"
+        android:maxLines="1"
+        android:textSize="18sp"
+        android:ellipsize="end"
+        android:textStyle="bold" />
+
+    <ImageButton
+        android:id="@+id/button_pre"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.1"
+        android:background="@android:color/transparent"
+        android:src="@mipmap/ic_pre" />
+
+    <ImageButton
+        android:id="@+id/button_control"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.1"
+        android:background="@android:color/transparent"
+        android:src="@mipmap/ic_pause" />
+
+    <ImageButton
+        android:id="@+id/button_next"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.1"
+        android:background="@android:color/transparent"
+        android:src="@mipmap/ic_next" />
+    <ImageButton
+        android:id="@+id/button_delete"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.1"
+        android:background="@android:color/transparent"
+        android:src="@mipmap/ic_delete" />
+</LinearLayout>
