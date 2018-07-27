@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.admin.mymusicplayer.R;
-import com.example.admin.mymusicplayer.model.entity.SongObject;
+import com.example.admin.mymusicplayer.model.entity.Song;
 import com.example.admin.mymusicplayer.view.OnRecyclerViewItemClickListener;
 
 import java.util.ArrayList;
@@ -20,10 +20,10 @@ import java.util.ArrayList;
 public class ListSongAdapter extends RecyclerView.Adapter<ListSongAdapter.MyViewHolder> {
 
     private Activity activity;
-    private ArrayList<SongObject> arrayList;
+    private ArrayList<Song> arrayList;
     private OnRecyclerViewItemClickListener mOnRecyclerViewItemClickListener;
 
-    public ListSongAdapter(Activity activity, ArrayList<SongObject> arrayList) {
+    public ListSongAdapter(Activity activity, ArrayList<Song> arrayList) {
         this.activity = activity;
         this.arrayList = arrayList;
     }
@@ -53,7 +53,7 @@ public class ListSongAdapter extends RecyclerView.Adapter<ListSongAdapter.MyView
     public class MyViewHolder extends RecyclerView.ViewHolder {
         private OnRecyclerViewItemClickListener mOnRecyclerViewItemClickListener;
         private TextView txtTenBaiHat;
-        private SongObject songObject;
+        private Song songObject;
 
         public MyViewHolder(View itemView, OnRecyclerViewItemClickListener onRecyclerViewItemClickListener) {
             super(itemView);
@@ -66,7 +66,7 @@ public class ListSongAdapter extends RecyclerView.Adapter<ListSongAdapter.MyView
                 }
             });
         }
-        public void fillData(SongObject songObject) {
+        public void fillData(Song songObject) {
             this.songObject = songObject;
             txtTenBaiHat.setText(songObject.getName().toString());
         }

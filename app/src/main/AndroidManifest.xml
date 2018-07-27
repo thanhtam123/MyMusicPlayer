@@ -21,6 +21,18 @@
             </intent-filter>
         </activity>
         <service android:name=".service.MusicService" />
+        <receiver android:name=".broadcast.NotificationBroadcast">
+            <intent-filter>
+                <action android:name="com.example.admin.mymusicplayer.delete" />
+                <action android:name="com.example.admin.mymusicplayer.pause" />
+                <action android:name="com.example.admin.mymusicplayer.next" />
+                <action android:name="com.example.admin.mymusicplayer.open" />
+                <action android:name="com.example.admin.mymusicplayer.play" />
+                <action android:name="com.example.admin.mymusicplayer.previous" />
+                <action android:name="android.intent.action.MEDIA_BUTTON" />
+                <action android:name="android.media.VOLUME_CHANGED_ACTION" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

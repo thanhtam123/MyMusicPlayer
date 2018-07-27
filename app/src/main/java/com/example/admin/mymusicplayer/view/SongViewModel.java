@@ -1,4 +1,4 @@
-package com.example.admin.mymusicplayer.model;
+package com.example.admin.mymusicplayer.view;
 
 import android.app.Application;
 import android.arch.lifecycle.AndroidViewModel;
@@ -10,7 +10,7 @@ import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 
-import com.example.admin.mymusicplayer.model.entity.SongObject;
+import com.example.admin.mymusicplayer.model.entity.Song;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -23,14 +23,14 @@ import java.util.List;
  */
 
 public class SongViewModel extends AndroidViewModel{
-    private MutableLiveData<List<SongObject>> songs;
+    private MutableLiveData<List<Song>> songs;
     private Application application;
     public SongViewModel(@NonNull Application application) {
         super(application);
         this.application = application;
     }
 
-    public LiveData<List<SongObject>> loadListSongs(){
+    public LiveData<List<Song>> loadListSongs(){
         if(songs == null){
             songs = new MutableLiveData<>();
             loadListSongFromDevice();
@@ -38,8 +38,8 @@ public class SongViewModel extends AndroidViewModel{
         return songs;
     }
 
-    public LiveData<List<SongObject>> loadListSongFromDevice() {
-        ArrayList<SongObject> arrayList = new ArrayList<>();
+    public LiveData<List<Song>> loadListSongFromDevice() {
+        ArrayList<Song> arrayList = new ArrayList<>();
         Uri uri = MediaStore.Audio.Media.EXTERNAL_CONTENT_URI;
 
         String[] m_data = {MediaStore.Audio.Media.DATA,
@@ -53,7 +53,7 @@ public class SongViewModel extends AndroidViewModel{
         int artistColumn = c.getColumnIndex(MediaStore.Audio.Media.ARTIST);
 
         do {
-            SongObject songObject = new SongObject(c.getString(titleColumn), c.getString(artistColumn), c.getString(idColumn));
+            Song songObject = new Song(c.getString(titleColumn), c.getString(artistColumn), c.getString(idColumn));
             arrayList.add(songObject);
         } while (c.moveToNext());
 
@@ -84,15 +84,15 @@ public class SongViewModel extends AndroidViewModel{
         return al;
     }
 
-    public static ArrayList<SongObject> getPlayList(ArrayList<File> arr) {
-        ArrayList<SongObject> arrayList1 = new ArrayList<>();
+    public static ArrayList<Song> getPlayList(ArrayList<File> arr) {
+        ArrayList<Song> arrayList1 = new ArrayList<>();
         for (int i = 0; i < arr.size(); i++) {
             String nameFile = arr.get(i).getName().toString();
             String[] a = nameFile.split("_");
             if (a.length != 0) {
                 String id = arr.get(i).getPath();
                 if (a[0].compareTo("com.zing.mp3") != 0) {
-                    arrayList1.add(new SongObject(a[0], "Zingmp3", id));
+                    arrayList1.add(new Song(a[0], "Zingmp3", id));
                 }
 
             }

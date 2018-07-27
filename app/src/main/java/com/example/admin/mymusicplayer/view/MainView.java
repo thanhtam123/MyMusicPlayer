@@ -1,6 +1,6 @@
 package com.example.admin.mymusicplayer.view;
 
-import com.example.admin.mymusicplayer.model.entity.SongObject;
+import com.example.admin.mymusicplayer.model.entity.Song;
 
 import java.util.ArrayList;
 
@@ -9,6 +9,6 @@ import java.util.ArrayList;
  */
 
 public interface MainView {
-    void displaySongs(ArrayList<SongObject> arrayList);
-    void controlPlayMusic(SongObject songObject);
+    void displaySongs(ArrayList<Song> arrayList);
+    void controlPlayMusic(Song songObject);
 }
