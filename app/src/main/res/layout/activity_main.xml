@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/padding_5dp"
+    android:weightSum="1"
+    tools:context="com.example.admin.mymusicplayer.view.MainActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.9">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_list_song"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="@dimen/padding_5dp"/>
+
+        <TextView
+            android:id="@+id/text_msg_not_found_song"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/msg_no_song_fetch"
+            android:textSize="20sp"
+            android:textStyle="italic"
+            android:visibility="gone" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/linea_control"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/text_song_name"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.6"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:textSize="@dimen/text_size_song_name_ll"
+            android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/button_pre"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.125"
+            android:background="@android:color/transparent"
+            android:src="@mipmap/ic_pre" />
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.15">
+            <ImageButton
+                android:id="@+id/button_pause"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                android:src="@mipmap/ic_pause" />
+
+            <ImageButton
+                android:id="@+id/button_play"
+                android:layout_width="wrap_content"
+                android:visibility="gone"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"
+                android:background="@mipmap/ic_play" />
+
+        </FrameLayout>
+
+        <ImageButton
+            android:id="@+id/button_next"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.125"
+            android:background="@android:color/transparent"
+            android:src="@mipmap/ic_next" />
+    </LinearLayout>
+
+</LinearLayout>

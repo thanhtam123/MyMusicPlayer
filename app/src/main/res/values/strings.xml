@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">MyMusicPlayer</string>
+    <string name="msg_no_song_fetch">Song not found</string>
+    <string name="back">Back</string>
+    <string name="pause">Pause</string>
+    <string name="play">Play</string>
+    <string name="player">Audio Player</string>
+    <string name="next">Next</string>
+    <string name="open_playlist">Open Playlist</string>
+</resources>
